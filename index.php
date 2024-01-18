@@ -7,13 +7,14 @@
     <meta name="description" content="">
     <meta name="author" content="Kevin Jofraly Pérez López">
     <link rel="icon" href="../../../../favicon.ico">
-
-    <title>Agenda de Contantos Personal</title>
+    <script src="https://kit.fontawesome.com/e56f733d59.js" crossorigin="anonymous"></script>
+    <title>Agenda de Contactos Personal</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="bootstrap/css/custom.css">
 
 </head>
 
@@ -42,16 +43,15 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="buscar" aria-label="Search">
+                <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
             </form>
         </div>
     </nav>
 
     <div class="container">
-
-
-
+        <h1 class="page-header text-center">Agenda de contactos personal</h1>
+        <button class="btn btn-primary" data-toggle="modal"> <span class="fa fa-plus">&nbsp;</span>Nuevo</button>
 
 
     </div><!-- /.container -->
