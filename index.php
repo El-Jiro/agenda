@@ -44,7 +44,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                <button class="btn btn-outline-success my-2" type="submit" style="position:absolute; left:44vw; top:0.2vh">Buscar</button>
             </form>
         </div>
     </nav>
@@ -52,7 +52,19 @@
     <div class="container">
         <h1 class="page-header text-center">Agenda de contactos personal</h1>
         <button class="btn btn-primary" data-toggle="modal"> <span class="fa fa-plus">&nbsp;</span>Nuevo</button>
+        <table class="table table-bordered table-striped" style="margin-top: 3vh;">
+            <thead>
+                <th class="text-center">ID</th>
+                <th class="text-center">NOMBRE DE CONTACTO</th>
+                <th class="text-center">TÉLEFONO</th>
+                <th class="text-center">CORREO</th>
+                <th class="text-center">DIRECCIÓN</th>
+                <th class="text-center">ACCIONES</th>
+            </thead>
+            <tbody>
 
+            </tbody>
+        </table>
 
     </div><!-- /.container -->
 
