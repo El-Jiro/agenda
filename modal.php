@@ -12,7 +12,7 @@
             <!-- Add the rest of your modal body here -->
             <div class="modal-body">
                 <div class="container-fluid">
-                    <form action="#" method="post">
+                    <form action="insertar.php" method="post">
                         <div class="row form-group">
                             <div class="col-sm-2">
                                 <label class="control-label">Nombre: </label>
@@ -34,7 +34,7 @@
                                 <label class="control-label">Correo: </label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="email" name="correo" id="mail" class="form-control">
+                                <input type="email" name="email" id="mail" class="form-control">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -42,7 +42,7 @@
                                 <label class="control-label">Dirección: </label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="text" name="dor" id="address" class="form-control">
+                                <input type="text" name="dir" id="address" class="form-control">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -52,7 +52,7 @@
                                 </span>
                                 Cancelar
                             </button>
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" name="add" class="btn btn-primary">
                                 <span class="fa fa-save">
                                     &nbsp;
                                 </span>

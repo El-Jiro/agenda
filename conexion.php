@@ -3,12 +3,12 @@ class Conexion
 {
     private string $server = "mysql:host=localhost; dbname=agenda";
     private string $user  = "root";
-    private string $password = "";
+    private string $password = "Kor-Skarn";
     private array $options = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ];
-    protected PDO $conn;
+    public $conn;
 
     public function open()
     {
