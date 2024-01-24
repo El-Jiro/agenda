@@ -54,6 +54,20 @@
             <div class="col -sm-12">
                 <a href="#addModal" class="btn btn-primary" data-toggle="modal"> <span class="fa fa-plus">&nbsp;</span>Nuevo</a>
 
+                <?php
+                session_start();
+                if (isset($_SESSION['message'])) {
+                ?>
+                    <div class="alert alert-dismissible alert-success" style="margin-top: 20px;">
+                        <button type="button" class="close" data-dismiss="alert">
+                            &times;
+                        </button>
+                        <?php echo $_SESSION['message']; ?>
+                    </div>
+                <?php
+                    unset($_SESSION['message']);
+                }
+                ?>
                 <table class="table table-bordered table-striped" style="margin-top: 3vh;">
                     <thead>
                         <th class="text-center">ID</th>
@@ -64,8 +78,8 @@
                         <th class="text-center">ACCIONES</th>
                     </thead>
                     <tbody>
-                        <?php
 
+                        <?php
                         include_once('conexion.php');
 
                         $conn = new Conexion;

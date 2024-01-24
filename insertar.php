@@ -28,7 +28,7 @@ if (isset($_POST['add'])) {
             $database->close();
         }
     } else {
-        $_SESSION['message'] = 'Error connecting to the database';
+        $_SESSION['message'] = 'Error connecting to the databasemos';
     }
 } else {
     $_SESSION['message'] = 'Por favor rellene todos los campos para continuar';
