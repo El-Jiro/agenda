@@ -81,9 +81,19 @@
                                     <td><?php echo $row['telefono']; ?></td>
                                     <td><?php echo $row['correo']; ?></td>
                                     <td><?php echo $row['direccion']; ?></td>
-                                    <td><a href=" #">Editar</a> <a href="#">Eliminar</a></td>
-
-
+                                    <td>
+                                        <a class="btn btn-success btn-sm" href="#edit_<?php echo $row['id']; ?>" data-toggle="modal">
+                                            <span class="fa fa-edit">
+                                            </span>
+                                            Editar
+                                        </a>
+                                        &nbsp;
+                                        <a class="btn btn-danger btn-sm" href="#delete_<?php echo $row['id']; ?>" data-toggle="modal">
+                                            <span class="fa fa-trash">
+                                            </span>
+                                            Eliminar
+                                        </a>
+                                    </td>
                                 </tr>
                         <?php
                             }
