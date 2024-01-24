@@ -1,9 +1,7 @@
 <?php
 
-declare(strict_types=1);
+session_start();
 include_once('conexion.php');
-
-
 
 if (isset($_POST['add'])) {
     $database = new Conexion();

@@ -53,20 +53,49 @@
         <div class="row">
             <div class="col -sm-12">
                 <a href="#addModal" class="btn btn-primary" data-toggle="modal"> <span class="fa fa-plus">&nbsp;</span>Nuevo</a>
-            </div>
-            <table class="table table-bordered table-striped" style="margin-top: 3vh;">
-                <thead>
-                    <th class="text-center">ID</th>
-                    <th class="text-center">NOMBRE DE CONTACTO</th>
-                    <th class="text-center">TÉLEFONO</th>
-                    <th class="text-center">CORREO</th>
-                    <th class="text-center">DIRECCIÓN</th>
-                    <th class="text-center">ACCIONES</th>
-                </thead>
-                <tbody>
 
-                </tbody>
-            </table>
+                <table class="table table-bordered table-striped" style="margin-top: 3vh;">
+                    <thead>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">NOMBRE DE CONTACTO</th>
+                        <th class="text-center">TÉLEFONO</th>
+                        <th class="text-center">CORREO</th>
+                        <th class="text-center">DIRECCIÓN</th>
+                        <th class="text-center">ACCIONES</th>
+                    </thead>
+                    <tbody>
+                        <?php
+
+                        include_once('conexion.php');
+
+                        $conn = new Conexion;
+                        $db = $conn->open();
+
+                        try {
+                            $sql = 'SELECT * FROM personas';
+                            foreach ($db->query($sql) as $row) {
+                        ?>
+                                <tr>
+                                    <td class="text-center"> <?php echo $row['id']; ?></td>
+                                    <td class="text-center"><?php echo $row['nombre']; ?></td>
+                                    <td class="text-center"><?php echo $row['telefono']; ?></td>
+                                    <td class="text-center"><?php echo $row['correo']; ?></td>
+                                    <td class="text-center"><?php echo $row['direccion']; ?></td>
+                                    <td class="text-center"><a href=" #">Editar</a> <a href="#">Eliminar</a></td>
+
+
+                                </tr>
+                        <?php
+                            }
+                        } catch (PDOException $e) {
+                            echo 'Error al conectar con la base de datos: ' . $e->getMessage();
+                        };
+                        $conn->close();
+                        ?>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div><!-- /.container -->
     <?php include('addModal.php'); ?>
