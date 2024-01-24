@@ -75,13 +75,13 @@
                             $sql = 'SELECT * FROM personas';
                             foreach ($db->query($sql) as $row) {
                         ?>
-                                <tr>
-                                    <td class="text-center"> <?php echo $row['id']; ?></td>
-                                    <td class="text-center"><?php echo $row['nombre']; ?></td>
-                                    <td class="text-center"><?php echo $row['telefono']; ?></td>
-                                    <td class="text-center"><?php echo $row['correo']; ?></td>
-                                    <td class="text-center"><?php echo $row['direccion']; ?></td>
-                                    <td class="text-center"><a href=" #">Editar</a> <a href="#">Eliminar</a></td>
+                                <tr class="text-center">
+                                    <td> <?php echo $row['id']; ?></td>
+                                    <td><?php echo $row['nombre']; ?></td>
+                                    <td><?php echo $row['telefono']; ?></td>
+                                    <td><?php echo $row['correo']; ?></td>
+                                    <td><?php echo $row['direccion']; ?></td>
+                                    <td><a href=" #">Editar</a> <a href="#">Eliminar</a></td>
 
 
                                 </tr>
