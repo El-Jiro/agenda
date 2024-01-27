@@ -23,7 +23,7 @@ class Conexion
 
             return $this->conn;
         } catch (PDOException $e) {
-            echo "Error al conectar a la base de datos: " . $e->getMessage();
+            echo "Error al conectar a la base de datos: {$e->getMessage()} ";
         }
     }
 

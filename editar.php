@@ -3,23 +3,25 @@
 session_start();
 include_once('conexion.php');
 
-if (isset($_POST['add'])) {
+if (isset($_POST['edit'])) {
+
     $database = new Conexion();
     $db = $database->open();
 
+
     if ($db !== null) {
+
         try {
-            $sql = 'INSERT INTO personas (nombre, telefono, correo, direccion) VALUES (:nombre, :tel, :email, :dir)';
-            $stmt = $db->prepare($sql);
+            $id = $_GET['id'];
+            $name = $_POST['nombre'];
+            $phone = $_POST['tel'];
+            $email = $_POST['email'];
+            $address = $_POST['dir'];
 
-            $values = [
-                ':nombre' => $_POST['nombre'] ?? '',
-                ':tel' => $_POST['tel'] ?? '',
-                ':email' => $_POST['email'] ?? '',
-                ':dir' => $_POST['dir'] ?? ''
-            ];
+            $sql = "UPDATE personas SET nombre = '$name', telefono = '$phone', 
+            correo = '$email', direccion = '$address' WHERE id = '$id'";
 
-            $_SESSION['message'] = $stmt->execute($values) ? 'Contacto agregado correctamente' : 'Error al agregar el contacto';
+            $_SESSION['message'] = $db->exec($sql) ? 'Contacto actualizado correctamente' : 'Error al actualizar el contacto';
         } catch (PDOException $e) {
             $_SESSION['message'] = $e->getMessage();
         }

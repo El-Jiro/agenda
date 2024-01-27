@@ -115,7 +115,7 @@
                         <?php
                             }
                         } catch (PDOException $e) {
-                            echo 'Error al conectar con la base de datos: ' . $e->getMessage();
+                            echo "Error al conectar con la base de datos: {$e->getMessage()}";
                         };
                         $conn->close();
                         ?>
