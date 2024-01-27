@@ -108,6 +108,9 @@
                                             Eliminar
                                         </a>
                                     </td>
+                                    <?php
+                                    include('editModal.php');
+                                    ?>
                                 </tr>
                         <?php
                             }
