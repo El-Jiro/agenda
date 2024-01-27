@@ -35,4 +35,5 @@ if (isset($_POST['edit'])) {
 } else {
     $_SESSION['message'] = 'Por favor rellene todos los campos para continuar';
 }
+
 header('location: index.php');

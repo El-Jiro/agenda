@@ -53,19 +53,30 @@
         <div class="row">
             <div class="col -sm-12">
                 <a href="#addModal" class="btn btn-primary" data-toggle="modal"> <span class="fa fa-plus">&nbsp;</span>Nuevo</a>
-
                 <?php
                 session_start();
-                if (isset($_SESSION['message'])) {
+                $message = $_SESSION['message'];
+
+                if (isset($message) && str_contains($message, 'correctamente')) {
                 ?>
                     <div class="alert alert-dismissible alert-success" style="margin-top: 20px;">
                         <button type="button" class="close" data-dismiss="alert">
                             &times;
                         </button>
-                        <?php echo $_SESSION['message']; ?>
+                        <?php echo $message; ?>
                     </div>
                 <?php
-                    unset($_SESSION['message']);
+                    unset($message);
+                } else {
+                ?>
+                    <div class="alert alert-dismissible alert-danger" style="margin-top: 20px;">
+                        <button type="button" class="close" data-dismiss="alert">
+                            &times;
+                        </button>
+                        <?php echo $message; ?>
+                    </div>
+                <?php
+                    unset($message);
                 }
                 ?>
                 <table class="table table-bordered table-striped" style="margin-top: 3vh;">

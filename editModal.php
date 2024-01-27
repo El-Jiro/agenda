@@ -12,7 +12,7 @@
             <!-- Add the rest of your modal body here -->
             <div class="modal-body">
                 <div class="container-fluid">
-                    <form action="editar.php?=<?php echo $row['id']; ?>" method="post">
+                    <form action="editar.php?id=<?php echo $row['id']; ?>" method="post">
                         <div class="row form-group">
                             <div class="col-sm-2">
                                 <label class="control-label">Nombre: </label>
