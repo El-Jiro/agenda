@@ -59,7 +59,7 @@
                 <?php
 
                 session_start();
-                $message = isset($_SESSION['message']) ? $_SESSION(['message']) : null;
+                $message = isset($_SESSION['message']) ? $_SESSION['message'] : null;
 
                 if (isset($message) && str_contains($message, 'correctamente')) {
                 ?>
