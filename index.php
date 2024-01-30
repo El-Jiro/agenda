@@ -87,7 +87,7 @@
                     <thead>
                         <th class="text-center">ID</th>
                         <th class="text-center">NOMBRE DE CONTACTO</th>
-                        <th class="text-center">TÉLEFONO</th>
+                        <th class="text-center">TELÉFONO</th>
                         <th class="text-center">CORREO</th>
                         <th class="text-center">DIRECCIÓN</th>
                         <th class="text-center">ACCIONES</th>
