@@ -71,7 +71,7 @@
                     </div>
                 <?php
                     unset($message);
-                } else if (isset($message)) {
+                } else if (isset($message) && str_contains($message, 'Error')) {
                 ?>
                     <div class="alert alert-dismissible alert-danger" style="margin-top: 20px;">
                         <button type="button" class="close" data-dismiss="alert">

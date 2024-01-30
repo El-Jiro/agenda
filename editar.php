@@ -33,7 +33,7 @@ if (isset($_POST['edit'])) {
         $_SESSION['message'] = 'Error connecting to the database';
     }
 } else {
-    $_SESSION['message'] = 'Por favor rellene todos los campos para continuar';
+    $_SESSION['message'] = 'Seleccione un contacto para actualizar';
 }
 
 header('location: index.php');
