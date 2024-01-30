@@ -52,10 +52,14 @@
         <h1 class="page-header text-center">Agenda de contactos personal</h1>
         <div class="row">
             <div class="col -sm-12">
-                <a href="#addModal" class="btn btn-primary" data-toggle="modal"> <span class="fa fa-plus">&nbsp;</span>Nuevo</a>
+                <a href="#addModal" class="btn btn-primary" data-toggle="modal">
+                    <span class="fa fa-plus">&nbsp;</span>
+                    Nuevo
+                </a>
                 <?php
+
                 session_start();
-                $message = $_SESSION['message'];
+                $message = isset($_SESSION['message']) ? $_SESSION(['message']) : null;
 
                 if (isset($message) && str_contains($message, 'correctamente')) {
                 ?>
@@ -67,7 +71,7 @@
                     </div>
                 <?php
                     unset($message);
-                } else {
+                } else if (isset($message)) {
                 ?>
                     <div class="alert alert-dismissible alert-danger" style="margin-top: 20px;">
                         <button type="button" class="close" data-dismiss="alert">
@@ -121,6 +125,7 @@
                                     </td>
                                     <?php
                                     include('editModal.php');
+                                    include('deleteModal.php')
                                     ?>
                                 </tr>
                         <?php
