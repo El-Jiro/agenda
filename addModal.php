@@ -12,7 +12,7 @@
             <!-- Add the rest of your modal body here -->
             <div class="modal-body">
                 <div class="container-fluid">
-                    <form action="insertar.php" method="post">
+                    <form action="insertar.php" method="post" id="add_form">
                         <div class="row form-group">
                             <div class="col-sm-2">
                                 <label class="control-label">Nombre: </label>
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="clearForm()">
                                 <span class="fa fa-close">
                                     &nbsp;
                                 </span>
@@ -65,3 +65,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    function clearForm() {
+
+        const form = document.getElementById("add_form")
+        form.reset()
+    }
+</script>
