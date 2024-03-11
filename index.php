@@ -81,6 +81,16 @@
                     </div>
                 <?php
                     unset($message);
+                } else if (isset($message) && $message == 'Por favor rellene todos los campos para continuar') {
+                ?>
+                    <div class="alert alert-dismissible alert-danger" style="margin-top: 20px;">
+                        <button type="button" class="close" data-dismiss="alert">
+                            &times;
+                        </button>
+                        <?php echo $message; ?>
+                    </div>
+                <?php
+                    unset($message);
                 }
                 ?>
                 <table class="table table-bordered table-striped" style="margin-top: 3vh;">

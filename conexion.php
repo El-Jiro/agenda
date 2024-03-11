@@ -3,7 +3,7 @@ class Conexion
 {
     private string $server = "mysql:host=localhost; dbname=agenda";
     private string $user  = "root";
-    private string $password = "Kor-Skarn";
+    private string $password = "";
     private array $options = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
