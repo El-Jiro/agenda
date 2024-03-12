@@ -81,7 +81,7 @@
                     </div>
                 <?php
                     unset($message);
-                } else if (isset($message) && $message == 'Por favor rellene todos los campos para continuar') {
+                } else if (isset($message) && $message == 'Debe rellenar todos los campos para agregar un contacto') {
                 ?>
                     <div class="alert alert-dismissible alert-danger" style="margin-top: 20px;">
                         <button type="button" class="close" data-dismiss="alert">
