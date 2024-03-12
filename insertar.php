@@ -24,7 +24,7 @@ function validateMail($email)
 function validatePhoneNumber($phone)
 {
 
-    $phonePattern = '/^`\d{9}$/';
+    $phonePattern = '/^5\d{9}$/';
 
     return preg_match($phonePattern, $phone) ? true : false;
 }
