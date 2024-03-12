@@ -13,37 +13,49 @@ function validateFields($fields)
     return true;
 }
 
+function validateMail($email)
+{
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return false;
+    }
+    return true;
+}
+
 if (isset($_POST['add'])) {
 
     $requiredFields = ['nombre', 'tel', 'email', 'dir'];
 
     if (validateFields($requiredFields)) {
-        $database = new Conexion();
-        $db = $database->open();
 
-        if ($db !== null) {
+        if (validateMail($_POST['email'])) {
+            $database = new Conexion();
+            $db = $database->open();
+            if ($db !== null) {
 
-            try {
-                $sql = 'INSERT INTO personas (nombre, telefono, correo, direccion) VALUES (:nombre, :tel, :email, :dir)';
-                $stmt = $db->prepare($sql);
+                try {
+                    $sql = 'INSERT INTO personas (nombre, telefono, correo, direccion) VALUES (:nombre, :tel, :email, :dir)';
+                    $stmt = $db->prepare($sql);
 
-                $values = [
-                    ':nombre' => $_POST['nombre'],
-                    ':tel' => $_POST['tel'],
-                    ':email' => $_POST['email'],
-                    ':dir' => $_POST['dir']
-                ];
+                    $values = [
+                        ':nombre' => $_POST['nombre'],
+                        ':tel' => $_POST['tel'],
+                        ':email' => $_POST['email'],
+                        ':dir' => $_POST['dir']
+                    ];
 
-                $_SESSION['message'] = $stmt->execute($values) ? 'Contacto agregado correctamente' : 'Error al agregar el contacto';
-            } catch (PDOException $e) {
-                $_SESSION['message'] = $e->getMessage();
-            }
+                    $_SESSION['message'] = $stmt->execute($values) ? 'Contacto agregado correctamente' : 'Error al agregar el contacto';
+                } catch (PDOException $e) {
+                    $_SESSION['message'] = $e->getMessage();
+                }
 
-            if ($database->conn !== null) {
-                $database->close();
+                if ($database->conn !== null) {
+                    $database->close();
+                }
+            } else {
+                $_SESSION['message'] = 'Error connecting to the database';
             }
         } else {
-            $_SESSION['message'] = 'Error connecting to the database';
+            $_SESSION['message'] = 'El correo electrónico no es válido';
         }
     } else {
         $_SESSION['message'] = 'Por favor rellene todos los campos para continuar';

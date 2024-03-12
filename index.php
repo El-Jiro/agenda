@@ -91,12 +91,22 @@
                     </div>
                 <?php
                     unset($message);
+                } else if (isset($message) && str_contains($message, 'válido')) {
+                ?>
+                    <div class="alert alert-dismissible alert-danger" style="margin-top: 20px;">
+                        <button type="button" class="close" data-dismiss="alert">
+                            &times;
+                        </button>
+                        <?php echo $message ?>
+                    </div>
+                <?php
+                    unset($message);
                 }
                 ?>
                 <table class="table table-bordered table-striped" style="margin-top: 3vh;">
                     <thead>
                         <th class="text-center">ID</th>
-                        <th class="text-center">NOMBRE DE CONTACTO</th>
+                        <th class="text-center">NOMBRE DEL CONTACTO</th>
                         <th class="text-center">TELÉFONO</th>
                         <th class="text-center">CORREO</th>
                         <th class="text-center">DIRECCIÓN</th>
